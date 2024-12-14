@@ -44,7 +44,7 @@
     </div>
 
     <!-- Audio Player -->
-    <audio controls autoplay loop>
+    <audio id="audioPlayer" autoplay loop>
         <source src="PEDRO SAMPAIO - POCPOC (Official Video) [ ezmp3.cc ].mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
@@ -70,9 +70,15 @@
         }
 
         const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Ensure autoplay works: unmute and start playing automatically
+        window.onload = function() {
+            const audio = document.getElementById("audioPlayer");
+            audio.muted = false; // Unmute the audio
+            audio.play(); // Play the audio if autoplay was blocked
+        }
     </script>
 </body>
 </html>
 
-    
-       
+        
