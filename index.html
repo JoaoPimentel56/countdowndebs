@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown to Our Meeting</title>
     <style>
-        /* Adicionar uma fonte digital para o countdown */
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
         body {
@@ -24,42 +23,39 @@
         }
 
         .countdown-container {
-            font-size: 2rem; /* Reduzir o tamanho do countdown */
+            font-size: 2rem;
             background-color: rgba(0, 0, 0, 0.5);
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
-            margin-top: 150px; /* Posição mais baixa do countdown */
+            margin-top: 150px;
             width: 250px;
-            position: relative; /* Permite posicionar "Faltam" acima */
+            position: relative;
         }
 
-        /* Fonte digital */
         .countdown {
-            font-family: 'Orbitron', sans-serif; /* Fonte digital */
-            font-size: 2.5rem; /* Tamanho ajustado para ser menor */
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
             letter-spacing: 2px;
         }
 
         .cool-text {
-    font-family: 'Cursive', sans-serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffcc00;
-    position: absolute;
-    top: 0px; /* Keeps it at the top */
-    left: -20px; /* Move it 20px to the left */
-    width: 100%;
-}
-
-        }
-
-        /* Add "para a vida voltar a fazer sentido!" text */
-        .subtext {
             font-family: 'Cursive', sans-serif;
             font-size: 1.8rem;
             font-weight: bold;
             color: #ffcc00;
-            margin-top: 10px; /* Adjust space between countdown and subtext */
+            position: absolute;
+            top: 100px; /* Moved "Faltam" down */
+            width: 100%;
+        }
+
+        .subtext {
+            font-family: 'Cursive', sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffcc00; /* Same color as "Faltam" */
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         audio {
@@ -72,30 +68,23 @@
     </style>
 </head>
 <body>
-    
-    <!-- Countdown Timer Container -->
     <div class="countdown-container">
-        <!-- Faltam Text -->
         <div class="cool-text">
             Faltam
         </div>
-        <!-- Countdown Timer -->
         <div id="countdown" class="countdown"></div>
-        <!-- Subtext -->
         <div class="subtext">
             para a vida voltar a fazer sentido!
         </div>
     </div>
-    
 
-    <!-- Audio Player -->
     <audio controls autoplay loop>
         <source src="PEDRO SAMPAIO - POCPOC (Official Video) [ ezmp3.cc ].mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <script>
-        const targetDate = new Date("2024-12-30T00:00:00").getTime(); // Define a data de destino
+        const targetDate = new Date("2024-12-30T00:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -120,7 +109,9 @@
 </html>
 
   
-
+  
+        
+          
             
   
             
