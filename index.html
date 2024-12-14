@@ -17,6 +17,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            flex-direction: column; /* Stack elements vertically */
         }
 
         .countdown {
@@ -24,25 +25,29 @@
             background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
+            margin-bottom: 20px; /* Add some space between countdown and audio player */
         }
 
         audio {
             display: block; /* Show the audio player */
             margin-top: 20px;
+            width: 80%; /* Adjust the width of the audio player */
+            max-width: 500px; /* Limit the width of the player */
+            border-radius: 10px; /* Optional: to match the rounded corners of the countdown */
         }
     </style>
 </head>
 <body>
+    <!-- Countdown Timer -->
+    <div class="countdown">
+        <div id="countdown"></div>
+    </div>
+
     <!-- Audio Player -->
     <audio controls autoplay loop>
         <source src="PEDRO SAMPAIO - POCPOC (Official Video) [ ezmp3.cc ].mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
-
-    <!-- Countdown Timer -->
-    <div class="countdown">
-        <div id="countdown"></div>
-    </div>
 
     <script>
         const targetDate = new Date("2024-12-30T00:00:00").getTime(); // Set the target date
@@ -68,4 +73,3 @@
     </script>
 </body>
 </html>
-
