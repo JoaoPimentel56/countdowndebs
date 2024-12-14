@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown to Our Meeting</title>
     <style>
+        /* Adicionar uma fonte digital para o countdown */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,44 +20,54 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            flex-direction: column; /* Stack elements vertically */
+            flex-direction: column;
         }
 
-        .countdown {
-            font-size: 3rem;
+        .countdown-container {
+            font-size: 2rem; /* Reduzir o tamanho do countdown */
             background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
-            margin-top: 200px; /* Aumenta o espaço para ficar mais abaixo */
+            margin-top: 150px; /* Posição mais baixa do countdown */
+            width: 250px;
+            position: relative; /* Permite posicionar "Faltam" acima */
+        }
+
+        /* Fonte digital */
+        .countdown {
+            font-family: 'Orbitron', sans-serif; /* Fonte digital */
+            font-size: 2.5rem; /* Tamanho ajustado para ser menor */
+            letter-spacing: 2px;
         }
 
         .cool-text {
-            font-family: 'Cursive', sans-serif; /* Example of a cool font */
-            font-size: 2rem;
+            font-family: 'Cursive', sans-serif;
+            font-size: 1.8rem;
             font-weight: bold;
-            margin-top: 20px;
-            color: #ffcc00; /* Bright color for visibility */
+            color: #ffcc00;
+            position: absolute;
+            top: -40px; /* Posiciona "Faltam" acima do countdown */
+            width: 100%;
         }
 
         audio {
-            display: block; /* Show the audio player */
-            width: 50%; /* Set the audio player width to half the screen */
-            max-width: 400px; /* Limit the audio player's maximum width */
+            display: block;
+            width: 50%;
+            max-width: 400px;
             margin-top: 20px;
-            border-radius: 10px; /* Optional: to match the rounded corners of the countdown */
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Countdown Timer -->
-    <div class="countdown">
-        <div id="countdown"></div>
-    </div>
-
-    <!-- Cool Text -->
-    <div class="cool-text">
-        Faltam<br>
-        para terminar o jejum!
+    <!-- Countdown Timer Container -->
+    <div class="countdown-container">
+        <!-- Faltam Text -->
+        <div class="cool-text">
+            Faltam
+        </div>
+        <!-- Countdown Timer -->
+        <div id="countdown" class="countdown"></div>
     </div>
 
     <!-- Audio Player -->
@@ -64,7 +77,7 @@
     </audio>
 
     <script>
-        const targetDate = new Date("2024-12-30T00:00:00").getTime(); // Set the target date
+        const targetDate = new Date("2024-12-30T00:00:00").getTime(); // Define a data de destino
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -88,6 +101,9 @@
 </body>
 </html>
 
+          
+
+   
  
 
             
